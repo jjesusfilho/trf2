@@ -24,7 +24,8 @@ Imports:
     tidyr,
     lubridate,
     httr,
-    xml2
+    xml2,
+    tibble
 RoxygenNote: 6.1.1
 URL: https://github.com/jjesusfilho/trf2
 BugReports: https://github.com/jjesusfilho/trf2/issues
