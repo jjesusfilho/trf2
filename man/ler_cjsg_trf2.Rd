@@ -2,18 +2,20 @@
 % Please edit documentation in R/ler_cjsg_trf2.R
 \name{ler_cjsg_trf2}
 \alias{ler_cjsg_trf2}
-\title{Lê htmls baixados por baixar_cjsg_trf2}
+\title{Lê metadados do resultado de baixar_cjsg_trf2}
 \usage{
-ler_cjsg_trf2(diretorio = ".")
+ler_cjsg_trf2(arquivos = NULL, diretorio = ".")
 }
 \arguments{
-\item{diretorio}{Default para o atual}
+\item{arquivos}{Vetor de arquivos}
+
+\item{diretorio}{Se arquivos for NULL, indicar diretório.}
 }
 \value{
-tibble com informações processuais
+Tibble com informações processuais
 }
 \description{
-Lê htmls baixados por baixar_cjsg_trf2
+Lê metadados do resultado de baixar_cjsg_trf2
 }
 \examples{
 \dontrun{

@@ -35,11 +35,25 @@ Para baixar acórdãos do TRF2, use a seguinte função:
 
 
 ```r
-baixar_cjsg_trf2(livre = "agência nacional de vigilância sanitária", data_inicial = "01/07/2019", data_final = "31/07/2019")
+dir.create("agencia")
+baixar_cjsg_trf2(livre = "agência nacional de vigilância sanitária", data_inicial = "01/07/2019", data_final = "31/07/2019",diretorio = "agencia")
 
-df <- ler_cjsg_trf2()
+df <- ler_cjsg_trf2(diretorio="agencia")
 
 ```
+
+Se quiser baixar e ler o inteiro teor dos acórdãos, use as seguintes funções:
+
+```r
+
+dir.create("agencia/julgados")
+
+baixar_julgados_trf2(df$link_julgado,diretorio = "agencia/julgados")
+
+julgados <- ler_julgados_trf2(diretorio = "agencia/julgados")
+```
+
+
 
 
 ## Code of conduct
