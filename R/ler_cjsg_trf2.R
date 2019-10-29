@@ -14,7 +14,7 @@ ler_cjsg_trf2 <- function(arquivos = NULL, diretorio = "."){
 
 if (is.null(arquivos)){
 
-  arquivos <- list.files("diretorio","html",full.names=TRUE)
+  arquivos <- list.files(diretorio,"html",full.names=TRUE)
 
 }
 

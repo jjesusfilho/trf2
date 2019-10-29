@@ -16,7 +16,7 @@
 #'   data_inicial = "10/07/2019", data_final = "31/07/2019"
 #' )
 #' }
-baixar_cjsg_trf2 <- function(livre, aspas = FALSE, data_inicial = NULL,data_final = NULL, diretorio = "."){
+baixar_cjsg_trf2 <- function(livre = "", aspas = FALSE, data_inicial = NULL,data_final = NULL, diretorio = "."){
 
 if (aspas ==  TRUE){
 

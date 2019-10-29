@@ -4,7 +4,7 @@
 \alias{baixar_cjsg_trf2}
 \title{Baixa decisões de segunda instância do TRF2}
 \usage{
-baixar_cjsg_trf2(livre, aspas = FALSE, data_inicial = NULL,
+baixar_cjsg_trf2(livre = "", aspas = FALSE, data_inicial = NULL,
   data_final = NULL, diretorio = ".")
 }
 \arguments{
