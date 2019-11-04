@@ -85,7 +85,7 @@ paginas <- httr::RETRY("GET",url) %>%
            stringr::str_extract("\\d+") %>%
            as.numeric() %>%
            sum() %>%
-           seq(0,.,10)
+           seq(0,.,1)
 
 purrr::walk(paginas,~{
 
