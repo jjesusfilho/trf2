@@ -5,7 +5,7 @@
 \title{Cria tibble com duas colunas de datas a partir para paralelização.}
 \usage{
 inicial_final(data_inicial = NULL, data_final = NULL,
-  intervalos = 10, formato = "\%d/\%m/\%Y")
+  intervalos = NULL, formato = "\%d/\%m/\%Y")
 }
 \arguments{
 \item{data_inicial}{Data inicial no formato dd/mm/YYYY}

@@ -24,9 +24,13 @@ if (aspas ==  TRUE){
 
 }
 
-data_inicial <- lubridate::dmy(data_inicial)
-data_final <- lubridate::dmy(data_final)
-periodo <- paste0("inmeta:DataDecisao:daterange:",data_inicial,"..",data_final)
+df <-inicial_final(data_inicial,data_final) %>%
+  dplyr::mutate_all(lubridate::dmy)
+
+purrr::walk2(df$data_inicial,df$data_final,~{
+
+
+periodo <- paste0("inmeta:DataDecisao:daterange:",.x,"..",.y)
 start <- "0"
 
 url_parseada <-
@@ -102,5 +106,5 @@ httr::RETRY("GET", url, httr::timeout(30),
 
 
 })
-
+})
 }

@@ -13,11 +13,25 @@
 #' inicial_final(data_inicial="01/01/2017", data_final="31/12/2017")
 #' }
 #'
-inicial_final <- function(data_inicial = NULL, data_final = NULL, intervalos=10, formato = "%d/%m/%Y"){
+inicial_final <- function(data_inicial = NULL, data_final = NULL, intervalos=NULL, formato = "%d/%m/%Y"){
+
+  datas=seq(lubridate::dmy(data_inicial),
+            lubridate::dmy(data_final),1)
+
+  if (is.null(intervalos)){
+
+    intervalos <- switch(nchar(length(datas)),
+                      1,
+                      10,
+                      20,
+                      30
+    )
+
+  }
 
   tibble::tibble(datas=seq(lubridate::dmy(data_inicial),
                            lubridate::dmy(data_final),1),
-                 grupos=dplyr::ntile(1:365,intervalos)) %>%
+                 grupos=dplyr::ntile(1:length(datas),intervalos)) %>%
     dplyr::group_split(grupos) %>%
     purrr::map(~dplyr::pull(.x,"datas") %>%
                  range()) %>%
@@ -26,6 +40,7 @@ inicial_final <- function(data_inicial = NULL, data_final = NULL, intervalos=10,
     purrr::set_names(c("data_inicial","data_final")) %>%
     dplyr::mutate_all(list(~as.Date(.,origin='1970-01-01') %>%
                              format(formato)))
+
 
 }
 
